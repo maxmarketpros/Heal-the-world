@@ -1,5 +1,5 @@
 import { getProductByHandle, getProductsByType } from "@/lib/catalog";
-import Gallery from "@/components/Gallery";
+import ZoomImage from "@/components/ZoomImage";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -24,6 +24,13 @@ export async function generateStaticParams() {
     return guitars.map((p) => ({ handle: p.handle }));
 }
 
+/** Strip the boilerplate gallery notice from descriptions */
+function cleanDescription(html: string): string {
+    return html
+        .replace(/Gallery includes instrument photos followed by COA images\.?/gi, "")
+        .trim();
+}
+
 export default async function GuitarDetailPage({ params }: PageProps) {
     const { handle } = await params;
     const product = getProductByHandle(handle);
@@ -31,6 +38,8 @@ export default async function GuitarDetailPage({ params }: PageProps) {
     if (!product) {
         notFound();
     }
+
+    const mainImage = product.images[0];
 
     return (
         <>
@@ -55,8 +64,13 @@ export default async function GuitarDetailPage({ params }: PageProps) {
             {/* Product Detail */}
             <section className="section-padding py-12 md:py-20">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-                    {/* Gallery */}
-                    <Gallery images={product.images} title={product.title} />
+                    {/* Single Image with Zoom */}
+                    {mainImage && (
+                        <ZoomImage
+                            src={mainImage.url}
+                            alt={mainImage.alt || product.title}
+                        />
+                    )}
 
                     {/* Details */}
                     <div className="space-y-8">
@@ -82,7 +96,7 @@ export default async function GuitarDetailPage({ params }: PageProps) {
                         {/* Description */}
                         <div
                             className="prose-product text-sm text-charcoal/80 leading-relaxed"
-                            dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+                            dangerouslySetInnerHTML={{ __html: cleanDescription(product.descriptionHtml) }}
                         />
 
                         <div className="divider" />
