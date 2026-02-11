@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getFeaturedProducts, getProductsByType } from "@/lib/catalog";
 import ProductCard from "@/components/ProductCard";
+import ArtistMarquee from "@/components/ArtistMarquee";
 
 export default function HomePage() {
   const featuredGuitars = getFeaturedProducts("Guitar", 10);
@@ -26,16 +27,6 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/40 via-transparent to-charcoal/40" />
 
         <div className="relative z-10 text-center px-6 max-w-4xl">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <Image
-              src="/logo.png"
-              alt="Heal The World logo"
-              width={100}
-              height={100}
-              className="w-20 h-20 md:w-24 md:h-24 object-contain opacity-90"
-            />
-          </div>
 
           <p className="subheading text-gold mb-5 tracking-[0.35em]">
             Est. 2003&ensp;·&ensp;Private Collection
@@ -64,8 +55,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Bottom fade for seamless transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-ivory to-transparent" />
+        {/* Scrolling artist names banner */}
+        <div className="absolute bottom-0 left-0 right-0 z-20">
+          <ArtistMarquee />
+        </div>
       </section>
 
       {/* ============================================================ */}
