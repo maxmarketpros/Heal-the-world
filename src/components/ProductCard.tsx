@@ -6,9 +6,11 @@ interface ProductCardProps {
     product: Product;
     /** URL prefix for the product detail page, e.g. "/guitars" */
     basePath: string;
+    /** Aspect ratio class for the image wrapper, defaults to "aspect-[3/4]" */
+    aspectRatio?: string;
 }
 
-export default function ProductCard({ product, basePath }: ProductCardProps) {
+export default function ProductCard({ product, basePath, aspectRatio = "aspect-[3/4]" }: ProductCardProps) {
     const mainImage = product.images[0];
 
     return (
@@ -17,7 +19,7 @@ export default function ProductCard({ product, basePath }: ProductCardProps) {
             className="group block card-hover"
         >
             {/* Image */}
-            <div className="relative aspect-[3/4] overflow-hidden bg-warm-gray mb-4">
+            <div className={`relative ${aspectRatio} overflow-hidden bg-warm-gray mb-4`}>
                 {mainImage ? (
                     <Image
                         src={mainImage.url}

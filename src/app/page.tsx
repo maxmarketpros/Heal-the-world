@@ -1,11 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getFeaturedProducts, getProductsByType } from "@/lib/catalog";
+import { getFeaturedProducts, getProductsByType, getProductByHandle } from "@/lib/catalog";
 import ProductCard from "@/components/ProductCard";
 import ArtistMarquee from "@/components/ArtistMarquee";
 
 export default function HomePage() {
-  const featuredGuitars = getFeaturedProducts("Guitar", 10);
+  // Get featured guitars and swap Mary Mary for B.B. King
+  const rawFeatured = getFeaturedProducts("Guitar", 10);
+  const bbKing = getProductByHandle("b-b-king-signed-guitar");
+  const featuredGuitars = rawFeatured.map((p) => {
+    if (p.handle.startsWith("mary-mary") && bbKing) return bbKing;
+    return p;
+  });
   const featuredDrumheads = getProductsByType("Drumhead").slice(0, 8);
 
   return (
@@ -187,6 +193,7 @@ export default function HomePage() {
                 key={product.handle}
                 product={product}
                 basePath="/drumheads"
+                aspectRatio="aspect-[4/3]"
               />
             ))}
           </div>
