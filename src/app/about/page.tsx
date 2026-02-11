@@ -94,14 +94,13 @@ export default function AboutPage() {
             {/* ── Collection Photo ── */}
             <section className="section-padding pb-16 md:pb-24">
                 <div className="max-w-6xl mx-auto">
-                    <div className="relative aspect-[16/7] overflow-hidden">
-                        <Image
-                            src="/hero-landscape.jpg"
-                            alt="The Heal The World memorabilia collection with owner"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
+                    <Image
+                        src="/hero-landscape.jpg"
+                        alt="The Heal The World memorabilia collection with owner"
+                        width={1920}
+                        height={1080}
+                        className="w-full h-auto"
+                    />
                     <p className="text-xs text-charcoal/40 tracking-widest uppercase mt-4 text-center font-sans">
                         The Heal The World Collection — Paul Myhill
                     </p>
