@@ -47,9 +47,9 @@ export default function Navbar() {
                     <Image
                         src="/logo.png"
                         alt="Heal The World — Rock N' Roll Memorabilia Collection"
-                        width={220}
-                        height={60}
-                        className="h-12 md:h-14 w-auto object-contain brightness-[0.3] contrast-[1.2]"
+                        width={300}
+                        height={80}
+                        className="h-14 md:h-16 w-auto object-contain brightness-[0.3] contrast-[1.2]"
                         priority
                     />
                 </Link>
