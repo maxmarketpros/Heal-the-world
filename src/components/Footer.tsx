@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const FOOTER_LINKS = [
     { href: "/guitars", label: "Guitars" },
@@ -18,9 +19,13 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
                     {/* Brand Column */}
                     <div className="md:col-span-1">
-                        <h3 className="font-serif text-2xl text-ivory mb-4">
-                            Heal The World
-                        </h3>
+                        <Image
+                            src="/logo.png"
+                            alt="Heal The World — Rock N' Roll Memorabilia Collection"
+                            width={280}
+                            height={80}
+                            className="h-16 w-auto object-contain mb-6"
+                        />
                         <p className="text-sm leading-relaxed text-ivory/60 max-w-xs">
                             A premier private collection of authenticated,
                             artist-signed instruments and artifacts. Meticulously assembled
