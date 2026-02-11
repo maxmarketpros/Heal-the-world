@@ -41,15 +41,15 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-light-border">
-            <nav className="section-padding flex items-center justify-between h-20">
+            <nav className="section-padding flex items-center justify-between h-28">
                 {/* Logo */}
                 <Link href="/" className="flex items-center shrink-0">
                     <Image
                         src="/logo.png"
                         alt="Heal The World — Rock N' Roll Memorabilia Collection"
-                        width={300}
-                        height={80}
-                        className="h-14 md:h-16 w-auto object-contain brightness-[0.3] contrast-[1.2]"
+                        width={500}
+                        height={160}
+                        className="h-28 md:h-32 w-auto object-contain brightness-[0.3] contrast-[1.2]"
                         priority
                     />
                 </Link>
