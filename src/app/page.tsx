@@ -12,30 +12,42 @@ export default function HomePage() {
       {/* ============================================================ */}
       {/*  HERO                                                         */}
       {/* ============================================================ */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-charcoal overflow-hidden">
-        {/* Background image — first guitar as hero */}
-        {featuredGuitars[0]?.images[0] && (
-          <Image
-            src={featuredGuitars[0].images[0].url}
-            alt="Featured signed guitar"
-            fill
-            className="object-cover opacity-25"
-            priority
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/40 to-charcoal/80" />
+      <section className="relative min-h-[90vh] flex items-center justify-center bg-charcoal overflow-hidden">
+        {/* Background — landscape photo with owner */}
+        <Image
+          src="/hero-landscape.jpg"
+          alt="The Heal The World memorabilia collection with owner"
+          fill
+          className="object-cover opacity-35"
+          priority
+        />
+        {/* Multi-layer gradient for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/30 to-charcoal/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/40 via-transparent to-charcoal/40" />
 
         <div className="relative z-10 text-center px-6 max-w-4xl">
-          <p className="subheading text-gold mb-6 tracking-[0.3em]">
-            Est. 2003 · Private Collection
+          {/* Logo */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/logo.png"
+              alt="Heal The World logo"
+              width={100}
+              height={100}
+              className="w-20 h-20 md:w-24 md:h-24 object-contain opacity-90"
+            />
+          </div>
+
+          <p className="subheading text-gold mb-5 tracking-[0.35em]">
+            Est. 2003&ensp;·&ensp;Private Collection
           </p>
-          <h1 className="heading-editorial text-ivory mb-6">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-ivory tracking-tight mb-4">
             Heal The World
           </h1>
-          <p className="font-serif text-2xl md:text-3xl text-ivory/80 mb-2 italic">
+          <div className="w-20 h-px bg-gold mx-auto my-6" />
+          <p className="font-serif text-xl md:text-2xl lg:text-3xl text-ivory/80 italic">
             Rock n&apos; Roll Memorabilia Collection
           </p>
-          <p className="font-sans text-base md:text-lg text-ivory/60 max-w-2xl mx-auto mt-6 leading-relaxed">
+          <p className="font-sans text-sm md:text-base text-ivory/55 max-w-xl mx-auto mt-6 leading-relaxed">
             A premier archive of authenticated, artist-signed instruments and
             artifacts spanning nearly 70 years of rock history.
           </p>
@@ -45,12 +57,15 @@ export default function HomePage() {
             </Link>
             <Link
               href="/contact"
-              className="btn-primary border-ivory/40 text-ivory hover:bg-ivory hover:text-charcoal"
+              className="inline-block border border-gold/60 text-gold px-8 py-3 text-sm tracking-[0.15em] uppercase font-sans transition-all duration-300 hover:bg-gold hover:text-ivory"
             >
               Get in Touch
             </Link>
           </div>
         </div>
+
+        {/* Bottom fade for seamless transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-ivory to-transparent" />
       </section>
 
       {/* ============================================================ */}
