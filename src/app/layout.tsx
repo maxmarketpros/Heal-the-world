@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PasswordGate from "@/components/PasswordGate";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -32,17 +33,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="bg-ivory text-charcoal antialiased font-sans">
-        {/* Announcement Bar */}
-        <div className="bg-charcoal text-ivory/80 text-center text-xs tracking-[0.25em] uppercase py-2.5 font-sans">
-          Private Inquiries&ensp;•&ensp;Museum-Grade Provenance&ensp;•&ensp;By
-          Appointment
-        </div>
+        <PasswordGate>
+          {/* Announcement Bar */}
+          <div className="bg-charcoal text-ivory/80 text-center text-xs tracking-[0.25em] uppercase py-2.5 font-sans">
+            Private Inquiries&ensp;•&ensp;Museum-Grade Provenance&ensp;•&ensp;By
+            Appointment
+          </div>
 
-        <Navbar />
+          <Navbar />
 
-        <main>{children}</main>
+          <main>{children}</main>
 
-        <Footer />
+          <Footer />
+        </PasswordGate>
       </body>
     </html>
   );
