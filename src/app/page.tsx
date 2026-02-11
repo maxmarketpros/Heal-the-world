@@ -315,6 +315,14 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/*  STATS / QUOTE / STORY CARDS — LIGHT MODE                     */}
+      {/* ============================================================ */}
+      <section className="section-padding py-20 md:py-28 bg-warm-gray overflow-hidden">
+        <div className="max-w-7xl mx-auto">
 
           {/* ── Stat Cards ── */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-20">
@@ -326,12 +334,12 @@ export default function HomePage() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="border border-ivory/10 bg-ivory/[0.03] backdrop-blur-sm p-6 md:p-8 text-center group hover:border-gold/40 transition-all duration-500"
+                className="border border-light-border bg-ivory p-6 md:p-8 text-center group hover:border-gold/40 transition-all duration-500"
               >
                 <p className="font-serif text-3xl md:text-4xl text-gold mb-2 group-hover:scale-105 transition-transform duration-500">
                   {item.stat}
                 </p>
-                <p className="text-xs md:text-sm tracking-[0.15em] uppercase text-ivory/50 font-sans">
+                <p className="text-xs md:text-sm tracking-[0.15em] uppercase text-charcoal/50 font-sans">
                   {item.label}
                 </p>
               </div>
@@ -341,7 +349,7 @@ export default function HomePage() {
           {/* ── Blockquote ── */}
           <div className="max-w-3xl mx-auto mb-20">
             <div className="border-l-2 border-gold pl-8 md:pl-10">
-              <p className="font-serif text-xl md:text-2xl text-ivory/90 italic leading-relaxed">
+              <p className="font-serif text-xl md:text-2xl text-charcoal/85 italic leading-relaxed">
                 &ldquo;The Rolling Stones guitar includes the signature of Mick
                 Taylor — the so-called &apos;fifth Stone&apos; — making it one
                 of the rarest pieces in the collection.&rdquo;
@@ -351,36 +359,36 @@ export default function HomePage() {
 
           {/* ── Story Cards Row ── */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="border border-ivory/10 bg-ivory/[0.03] p-8 md:p-10">
+            <div className="border border-light-border bg-ivory p-8 md:p-10 hover:border-gold/30 transition-all duration-500">
               <div className="w-10 h-10 border border-gold/40 flex items-center justify-center mb-5">
                 <span className="text-gold text-lg">♫</span>
               </div>
-              <h3 className="font-serif text-lg mb-3">Irreplaceable History</h3>
-              <p className="text-sm text-ivory/50 leading-relaxed font-sans">
+              <h3 className="font-serif text-lg mb-3 text-charcoal">Irreplaceable History</h3>
+              <p className="text-sm text-charcoal/50 leading-relaxed font-sans">
                 Signed instruments from legends no longer with us — artists
                 whose signatures can never again be obtained. From the Everly
                 Brothers&apos; 1941 Gibson to B.B. King&apos;s iconic Lucille.
               </p>
             </div>
 
-            <div className="border border-ivory/10 bg-ivory/[0.03] p-8 md:p-10">
+            <div className="border border-light-border bg-ivory p-8 md:p-10 hover:border-gold/30 transition-all duration-500">
               <div className="w-10 h-10 border border-gold/40 flex items-center justify-center mb-5">
                 <span className="text-gold text-lg">✦</span>
               </div>
-              <h3 className="font-serif text-lg mb-3">Forensic Authentication</h3>
-              <p className="text-sm text-ivory/50 leading-relaxed font-sans">
+              <h3 className="font-serif text-lg mb-3 text-charcoal">Forensic Authentication</h3>
+              <p className="text-sm text-charcoal/50 leading-relaxed font-sans">
                 Every piece is verified by PSA/DNA, JSA, REAL, or Beckett —
                 the gold standard in third-party forensic authentication. No
                 exceptions.
               </p>
             </div>
 
-            <div className="border border-ivory/10 bg-ivory/[0.03] p-8 md:p-10">
+            <div className="border border-light-border bg-ivory p-8 md:p-10 hover:border-gold/30 transition-all duration-500">
               <div className="w-10 h-10 border border-gold/40 flex items-center justify-center mb-5">
                 <span className="text-gold text-lg">◆</span>
               </div>
-              <h3 className="font-serif text-lg mb-3">Premium &amp; Private</h3>
-              <p className="text-sm text-ivory/50 leading-relaxed font-sans">
+              <h3 className="font-serif text-lg mb-3 text-charcoal">Premium &amp; Private</h3>
+              <p className="text-sm text-charcoal/50 leading-relaxed font-sans">
                 This is not a storefront. Every inquiry is treated with the
                 discretion and care it deserves. We will not be cheap — this
                 is a premium private collection.
