@@ -141,13 +141,6 @@ export default function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
-                        <Link
-                            href="/contact"
-                            className="btn-gold text-xs text-center mt-4"
-                            onClick={() => setMobileOpen(false)}
-                        >
-                            Get in Touch
-                        </Link>
                     </div>
                 </div>
             )}
