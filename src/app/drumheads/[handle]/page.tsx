@@ -24,6 +24,14 @@ export async function generateStaticParams() {
     return drumheads.map((p) => ({ handle: p.handle }));
 }
 
+/** Strip price lines from descriptions */
+function cleanDescription(html: string): string {
+    return html
+        .replace(/<li[^>]*>\s*<strong>\s*PRICE\s*:?\s*<\/strong>[^<]*<\/li>/gi, "")
+        .replace(/PRICE\s*:\s*\d[\d,.]*/gi, "")
+        .trim();
+}
+
 export default async function DrumheadDetailPage({ params }: PageProps) {
     const { handle } = await params;
     const product = getProductByHandle(handle);
@@ -60,7 +68,7 @@ export default async function DrumheadDetailPage({ params }: PageProps) {
 
                         <div
                             className="prose-product text-sm text-charcoal/80 leading-relaxed"
-                            dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+                            dangerouslySetInnerHTML={{ __html: cleanDescription(product.descriptionHtml) }}
                         />
 
                         <div className="divider" />
