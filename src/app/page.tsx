@@ -271,62 +271,130 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/*  PROVENANCE / STORY SECTION                                   */}
+      {/*  THE COLLECTION — REDESIGNED                                   */}
       {/* ============================================================ */}
-      <section className="section-padding py-24 md:py-32 bg-charcoal text-ivory">
-        <div className="max-w-5xl mx-auto">
-          <p className="subheading text-gold mb-4 text-center">
-            The Collection
-          </p>
-          <h2 className="heading-editorial text-3xl md:text-5xl text-center mb-12">
-            Two Decades. Over 2,000 Artifacts.
-            <br />
-            From AC/DC to ZZ Top.
-          </h2>
+      <section className="section-padding py-24 md:py-36 bg-charcoal text-ivory overflow-hidden">
+        <div className="max-w-7xl mx-auto">
 
-          <div className="space-y-8 text-ivory/70 font-sans leading-relaxed max-w-3xl mx-auto">
-            <p>
-              Meticulously assembled over more than twenty years by collector
-              Paul Myhill, this private archive represents one of the most
-              comprehensive authenticated collections of rock n&apos; roll
-              memorabilia ever assembled. There is simply no collection like it.
-            </p>
+          {/* ── Top: Photo + Headline ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+            {/* Owner Portrait */}
+            <div className="relative">
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src="/portrait-owner.jpg"
+                  alt="Paul Myhill with the Heal The World memorabilia collection"
+                  fill
+                  className="object-cover"
+                />
+                {/* Subtle gold accent bar */}
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
+              </div>
+              <p className="text-xs text-ivory/30 tracking-widest uppercase mt-4 text-center font-sans">
+                Collector &amp; Curator — Paul Myhill
+              </p>
+            </div>
 
-            <p>
-              Each instrument tells a story — from B.B. King&apos;s iconic
-              Gibson Lucille (the only guitar model he would play, named after a
-              woman who inspired a near-fatal fight) to David Bowie&apos;s
-              Eastwood Airline Twin Tone used on the &ldquo;A Reality
-              Tour.&rdquo;
-            </p>
+            {/* Headline + Intro */}
+            <div>
+              <p className="subheading text-gold mb-5 tracking-[0.35em]">
+                The Collection
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6">
+                Two Decades.
+                <br />
+                Over 2,000 Artifacts.
+                <br />
+                <span className="text-gold">From AC/DC to ZZ Top.</span>
+              </h2>
+              <p className="font-sans text-ivory/60 leading-relaxed text-base md:text-lg max-w-lg">
+                Meticulously assembled over more than twenty years, this private
+                archive represents one of the most comprehensive authenticated
+                collections of rock n&apos; roll memorabilia ever assembled.
+                There is simply no collection like it.
+              </p>
+            </div>
+          </div>
 
-            <div className="border-l-2 border-gold pl-6 my-10">
-              <p className="font-serif text-xl text-ivory italic">
+          {/* ── Stat Cards ── */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-20">
+            {[
+              { stat: "2,000+", label: "Authenticated Artifacts" },
+              { stat: "20+", label: "Years of Collecting" },
+              { stat: "100+", label: "Legendary Artists" },
+              { stat: "4", label: "Forensic Auth Bodies" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="border border-ivory/10 bg-ivory/[0.03] backdrop-blur-sm p-6 md:p-8 text-center group hover:border-gold/40 transition-all duration-500"
+              >
+                <p className="font-serif text-3xl md:text-4xl text-gold mb-2 group-hover:scale-105 transition-transform duration-500">
+                  {item.stat}
+                </p>
+                <p className="text-xs md:text-sm tracking-[0.15em] uppercase text-ivory/50 font-sans">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* ── Blockquote ── */}
+          <div className="max-w-3xl mx-auto mb-20">
+            <div className="border-l-2 border-gold pl-8 md:pl-10">
+              <p className="font-serif text-xl md:text-2xl text-ivory/90 italic leading-relaxed">
                 &ldquo;The Rolling Stones guitar includes the signature of Mick
                 Taylor — the so-called &apos;fifth Stone&apos; — making it one
                 of the rarest pieces in the collection.&rdquo;
               </p>
             </div>
-
-            <p>
-              The collection includes signed instruments and artifacts from
-              legends no longer with us — artists whose signatures can never
-              again be obtained. From the Everly Brothers&apos; 1941 Gibson
-              Kalamazoo to Paul McCartney&apos;s left-handed studio guitar, each
-              piece carries irreplaceable historical significance.
-            </p>
-
-            <p className="text-ivory/50 text-sm italic">
-              We will not be cheap. This is a premium private collection, and
-              every inquiry is treated with the discretion and care it deserves.
-            </p>
           </div>
 
-          <div className="text-center mt-12">
+          {/* ── Story Cards Row ── */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div className="border border-ivory/10 bg-ivory/[0.03] p-8 md:p-10">
+              <div className="w-10 h-10 border border-gold/40 flex items-center justify-center mb-5">
+                <span className="text-gold text-lg">♫</span>
+              </div>
+              <h3 className="font-serif text-lg mb-3">Irreplaceable History</h3>
+              <p className="text-sm text-ivory/50 leading-relaxed font-sans">
+                Signed instruments from legends no longer with us — artists
+                whose signatures can never again be obtained. From the Everly
+                Brothers&apos; 1941 Gibson to B.B. King&apos;s iconic Lucille.
+              </p>
+            </div>
+
+            <div className="border border-ivory/10 bg-ivory/[0.03] p-8 md:p-10">
+              <div className="w-10 h-10 border border-gold/40 flex items-center justify-center mb-5">
+                <span className="text-gold text-lg">✦</span>
+              </div>
+              <h3 className="font-serif text-lg mb-3">Forensic Authentication</h3>
+              <p className="text-sm text-ivory/50 leading-relaxed font-sans">
+                Every piece is verified by PSA/DNA, JSA, REAL, or Beckett —
+                the gold standard in third-party forensic authentication. No
+                exceptions.
+              </p>
+            </div>
+
+            <div className="border border-ivory/10 bg-ivory/[0.03] p-8 md:p-10">
+              <div className="w-10 h-10 border border-gold/40 flex items-center justify-center mb-5">
+                <span className="text-gold text-lg">◆</span>
+              </div>
+              <h3 className="font-serif text-lg mb-3">Premium &amp; Private</h3>
+              <p className="text-sm text-ivory/50 leading-relaxed font-sans">
+                This is not a storefront. Every inquiry is treated with the
+                discretion and care it deserves. We will not be cheap — this
+                is a premium private collection.
+              </p>
+            </div>
+          </div>
+
+          {/* ── CTA ── */}
+          <div className="text-center">
             <Link href="/contact" className="btn-gold">
               Inquire About the Collection
             </Link>
           </div>
+
         </div>
       </section>
     </>
