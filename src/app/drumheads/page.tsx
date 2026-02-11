@@ -37,6 +37,7 @@ export default function DrumheadsPage() {
                                 key={product.handle}
                                 product={product}
                                 basePath="/drumheads"
+                                aspectRatio="aspect-[4/3]"
                             />
                         ))}
                     </div>
