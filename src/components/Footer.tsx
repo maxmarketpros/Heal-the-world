@@ -22,9 +22,9 @@ export default function Footer() {
                         <Image
                             src="/logo.png"
                             alt="Heal The World — Rock N' Roll Memorabilia Collection"
-                            width={280}
-                            height={80}
-                            className="h-16 w-auto object-contain mb-6"
+                            width={560}
+                            height={160}
+                            className="h-32 md:h-36 w-auto object-contain mb-6"
                         />
                         <p className="text-sm leading-relaxed text-ivory/60 max-w-xs">
                             A premier private collection of authenticated,

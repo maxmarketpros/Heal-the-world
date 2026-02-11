@@ -63,29 +63,18 @@ function IconGlobe() {
 export default function AboutPage() {
     return (
         <>
-            {/* ── Hero with Landscape Image ── */}
-            <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center bg-charcoal overflow-hidden">
-                <Image
-                    src="/hero-landscape.jpg"
-                    alt="The Heal The World memorabilia collection"
-                    fill
-                    className="object-cover opacity-30"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/20 to-charcoal/80" />
-
-                <div className="relative z-10 text-center px-6 max-w-4xl">
-                    <p className="subheading text-gold mb-4 tracking-[0.35em]">
-                        Our Story
-                    </p>
-                    <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-ivory tracking-tight mb-6">
-                        About the Collection
-                    </h1>
-                    <p className="font-sans text-ivory/55 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-                        Two decades of passion, authenticity, and rock n&apos; roll history —
-                        meticulously curated by collector Paul Myhill.
-                    </p>
-                </div>
+            {/* ── Hero (clean, no background image) ── */}
+            <section className="section-padding py-20 md:py-32 text-center">
+                <p className="subheading text-gold mb-4 tracking-[0.35em]">
+                    Our Story
+                </p>
+                <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-charcoal tracking-tight mb-6">
+                    About the Collection
+                </h1>
+                <p className="font-sans text-charcoal/55 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                    Two decades of passion, authenticity, and rock n&apos; roll history —
+                    meticulously curated by collector Paul Myhill.
+                </p>
             </section>
 
             {/* ── Mission Statement ── */}
@@ -99,6 +88,23 @@ export default function AboutPage() {
                         ZZ Top.
                     </p>
                     <div className="w-16 h-px bg-gold mx-auto mt-10" />
+                </div>
+            </section>
+
+            {/* ── Collection Photo ── */}
+            <section className="section-padding pb-16 md:pb-24">
+                <div className="max-w-6xl mx-auto">
+                    <div className="relative aspect-[16/7] overflow-hidden">
+                        <Image
+                            src="/hero-landscape.jpg"
+                            alt="The Heal The World memorabilia collection with owner"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <p className="text-xs text-charcoal/40 tracking-widest uppercase mt-4 text-center font-sans">
+                        The Heal The World Collection — Paul Myhill
+                    </p>
                 </div>
             </section>
 
