@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         "About the Heal The World Rock n' Roll Memorabilia Collection. Two decades of meticulous curation by Paul Myhill.",
 };
 
-/* ── Flat-icon SVGss ─────────────────────────────────────────────── */
+/* ── Flat-icon SVGs ─────────────────────────────────────────────── */
 
 function IconGuitar() {
     return (
